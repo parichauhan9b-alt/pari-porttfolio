@@ -1,6 +1,6 @@
 import { Github, Linkedin } from "lucide-react";
 
-function Hero() {
+function Hero({data}) {
   return (
     <section id="home" className="hero">
       <div className="glow glow-purple"></div>
@@ -8,20 +8,21 @@ function Hero() {
 
       <div className="container hero-inner">
         <div>
-          <p className="hero-greeting"></p>
-          <h1 className="hero-title gradient-text"></h1>
-          <p className="hero-text"></p>
+          <p className="hero-greeting">hi,i'm{data.name}</p>
+          <h1 className="hero-title gradient-text">{data.role}</h1>
+          <p className="hero-text">{data.tagline}</p>
 
-          <a className="btn btn-primary"></a>
+          <a href="#projects" className="btn btn-primary">Explore my work</a>
+
 
           <div className="social-icons">
-            <a className="icon-link"><Github size={20} /></a>
-            <a className="icon-link"><Linkedin size={20} /></a>
+            <a className="icon-link" href={data.socials.Github }><Github size={20} /></a>
+            <a className="icon-link" href={data.socials.Linkedin}><Linkedin size={20} /></a>
           </div>
         </div>
 
         <div className="hero-photo">
-          <img />
+          <img src={data.profileImage} alt ={data.name}/>
         </div>
       </div>
     </section>
