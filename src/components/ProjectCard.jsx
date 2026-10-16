@@ -5,8 +5,8 @@ function ProjectCard({project}) {
     <div className="card project-card">
       <div className="project-image">
       {
-        projects.image ? (
-            <img src={projects.image} alt={project.title} />
+        project.image ? (
+            <img src={project.image} alt={project.title} />
         ):(
         <span className="image-placeholder">{project.title[0]}</span>
         )
